@@ -9,15 +9,12 @@ Created on Sat Dec 25 02:29:59 2021
 import tkinter as tk
 from tkinter import filedialog
 import tkinter.messagebox
-
 import pandas as pd
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-#from matplotlib.backends.backend_tkagg import NavigationToolbar2Tk as NavigationToolbar2TkAgg
-#from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 import numpy as np
 from numpy.fft import fft
-#from PIL import Image
+
 
 def main():
     def selectExcelfile():
