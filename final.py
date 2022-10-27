@@ -33,7 +33,6 @@ def main():
         data.columns=['time','amp']
         f = Figure(figsize=(15, 15), dpi=50)
         a = f.add_subplot(211)
-
         b = f.add_subplot(212)
 
         t = data['time']
@@ -82,8 +81,8 @@ def main():
             # Lock-in
             y_ref_sin = np.sin(2 * np.pi * f_ref * t1)
             y_ref_cos = np.cos(2 * np.pi * f_ref * t1)
-            I_sin = np.trapz(s * y_ref_sin, x = t1) / (15.99609375)
-            I_cos = np.trapz(s * y_ref_cos, x = t1) / (15.99609375)
+            I_sin = np.trapz(s * y_ref_sin, x = t1) / (t1[-1])
+            I_cos = np.trapz(s * y_ref_cos, x = t1) / (t1[-1])
             magnitude = 2 * np.sqrt(I_sin * I_sin + I_cos * I_cos)
             phase = np.arctan2(I_cos, I_sin)
             phase_deg = round(phase * 180 / np.pi)
